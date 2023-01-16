@@ -1,0 +1,67 @@
+@mixin flexible () {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+body {
+    margin: 0;
+    background-color: #1E252B;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.hero {
+    height: 700px;
+    padding: 26px 105px 0 111px;
+}
+
+.hero__header, .hero__logo {
+    @include flexible();
+}
+
+.hero__logo{
+    width: 140px;
+}
+
+.hero__logo_text {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 33px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.login-menu__item {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.55);
+    &:first-child {
+        margin-right: 41px;
+    }
+    &:last-child {
+        color: #FDF5FF;
+        padding: 12px 28px;
+        background-color: #FF6E30;
+        border-radius: 8px;
+    }
+}
+
+.menu {
+    width: 431px;
+    @include flexible();
+}
+
+.menu__item {
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(255, 255, 255, 0.55);
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.menu__item_link {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.55);
+}
