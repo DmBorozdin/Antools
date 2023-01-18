@@ -75,6 +75,7 @@ body {
   padding: 12px 36px;
   font-weight: 600;
   color: #FFF;
+  cursor: pointer;
 }
 
 .hero__description_serch-icon {
@@ -123,6 +124,18 @@ body {
   align-items: center;
 }
 
+.hero__footer_link {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.78);
+}
+.hero__footer_link:nth-child(n) {
+  transition: transform 0.5s ease;
+}
+.hero__footer_link:hover:nth-child(n) {
+  transform: scale(1.4);
+  color: #FF6E30;
+}
+
 .hero__header, .hero__logo {
   display: flex;
   justify-content: space-between;
@@ -143,6 +156,67 @@ body {
   font-size: 22px;
   line-height: 33px;
   color: rgba(255, 255, 255, 0.9);
+}
+
+.join {
+  width: 553px;
+  margin: 0 auto 240px;
+}
+
+.join__serch {
+  width: 549px;
+  padding: 8px 12px 8px 24px;
+  background-color: #283036;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.join__serch-button {
+  background-color: #FF6E30;
+  border-radius: 8px;
+  padding: 12px 36px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFF;
+  cursor: pointer;
+}
+
+.join__serch-input {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  border-width: 0;
+  background-color: #283036;
+  margin-right: 12px;
+  flex-grow: 1;
+  color: #FFF;
+}
+.join__serch-input:focus-visible {
+  outline-width: 0;
+}
+
+.join__text {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 18px;
+  line-height: 30px;
+  width: 427px;
+  margin: 0 auto 100px;
+  text-align: center;
+}
+
+.join__title {
+  font-weight: 500;
+  font-size: 49px;
+  line-height: 62px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 48px;
+  margin: 0 0 25px;
 }
 
 .login-menu__item {
@@ -238,6 +312,11 @@ body {
   box-sizing: border-box;
   margin: 100px auto 0;
   cursor: pointer;
+  transition: all 0.6s ease;
+}
+.popular__button:hover {
+  color: rgba(255, 255, 255, 0.55);
+  background-color: #FF6E30;
 }
 
 .popular__text {
@@ -259,43 +338,91 @@ body {
   margin: 0 0 25px;
 }
 
-.testimonial {
-  height: 492px;
-  margin: 0 108px 250px;
-  text-align: center;
-  position: relative;
+.slider {
+  margin-bottom: 100px;
 }
 
-.testimonial__chevron {
+.slider__item1_background-logo {
+  position: absolute;
+  font-family: "Lora";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 250px;
+  line-height: 320px;
+  width: 103px;
+  height: 320px;
+  background: linear-gradient(188.88deg, rgba(252, 252, 252, 0) 20.34%, rgba(255, 255, 255, 0.5) 155.72%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: rotate(19.17deg);
+}
+
+.slider__chevron {
   color: rgba(255, 255, 255, 0.28);
   position: absolute;
   top: 222px;
   cursor: pointer;
   transition: transform 0.5s ease;
 }
-.testimonial__chevron:hover {
+.slider__chevron:hover {
   transform: scale(1.5);
+  color: #FF6E30;
 }
 
-.testimonial__chevron-left {
+.slider__chevron-left {
   left: 0;
 }
 
-.testimonial__chevron-right {
+.slider__chevron-right {
   right: 0;
 }
 
-.testimonial__container {
+.slider-indicators {
+  width: 168px;
+  margin: 0 auto;
+  position: relative;
+}
+.slider-indicators::after, .slider-indicators::before {
+  content: "";
+  width: 44px;
+  height: 6px;
+  background-color: #283036;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 4px;
+}
+.slider-indicators::before {
+  left: 0;
+}
+
+.slider-indicators__items {
+  width: 44px;
+  height: 6px;
+  background-color: #283036;
+  margin: auto;
+  border-radius: 4px;
+}
+
+.slider-indicators__items-active {
+  background-color: #FF6E30;
+  height: 8px;
+}
+
+.slider__item1 {
   height: 492px;
   display: flex;
   justify-content: center;
 }
 
-.testimonial__photo {
+.slider__item1_photo {
   margin-right: 57px;
+  width: 399px;
+  height: 492px;
 }
 
-.testimonial__photo-caption {
+.slider__item1_photo-caption {
   position: absolute;
   text-align: left;
   padding: 13px 22px;
@@ -303,11 +430,11 @@ body {
   -webkit-backdrop-filter: blur(25px);
           backdrop-filter: blur(25px);
   border-radius: 8px;
-  left: 130px;
+  right: 61px;
   bottom: 29px;
 }
 
-.testimonial__photo-caption_name {
+.slider__item1_photo-caption-name {
   font-size: 26px;
   line-height: 39px;
   letter-spacing: 0.015em;
@@ -315,7 +442,7 @@ body {
   margin: 0 0 2px;
 }
 
-.testimonial__photo-caption_profession {
+.slider__item1__photo-caption-profession {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -323,11 +450,11 @@ body {
   margin: 0;
 }
 
-.testimonial__photo-container {
+.slider__item1_photo-container {
   position: relative;
 }
 
-.testimonial__text {
+.slider__item1_text {
   font-family: "Roboto", sans-serif;
   width: 393px;
   font-weight: 400;
@@ -337,6 +464,12 @@ body {
   color: rgba(255, 255, 255, 0.78);
   text-align: left;
   margin: 128px 0 0;
+}
+
+.testimonial {
+  margin: 0 108px 250px;
+  text-align: center;
+  position: relative;
 }
 
 .tools {

@@ -40,9 +40,9 @@
             </div>
             <img src="./img/background-img.svg" alt="background image" class="hero__background-img">
             <div class="hero__footer">
-                <iconify-icon icon="gg:facebook" width="34" height="34"></iconify-icon>
-                <iconify-icon icon="mdi:instagram" width="36" height="36"></iconify-icon>
-                <iconify-icon icon="mdi:twitter" width="36" height="36"></iconify-icon>
+                <a href="#" class="hero__footer_link"><iconify-icon icon="gg:facebook" width="34" height="34"></iconify-icon></a>
+                <a href="#" class="hero__footer_link"><iconify-icon icon="mdi:instagram" width="36" height="36"></iconify-icon></a>
+                <a href="#" class="hero__footer_link"><iconify-icon icon="mdi:twitter" width="36" height="36"></iconify-icon></a>
             </div>
         </section>
         <section class="popular">
@@ -241,17 +241,32 @@
             </div>
         </section>
         <section class="testimonial">
-            <iconify-icon icon="material-symbols:chevron-left-rounded" width="48" height="48" class="testimonial__chevron testimonial__chevron-left"></iconify-icon>
-            <iconify-icon icon="material-symbols:chevron-right-rounded" width="48" height="48" class="testimonial__chevron testimonial__chevron-right"></iconify-icon>
-            <div class="testimonial__container">
-                <div class="testimonial__photo-container">
-                    <img src="./img/ronald-richards.png" alt="Ronald Richards" class="testimonial__photo">
-                    <div class="testimonial__photo-caption">
-                        <p class="testimonial__photo-caption_name">Ronald Richards</p>
-                        <p class="testimonial__photo-caption_profession">Product Manager</p>
+            <iconify-icon icon="material-symbols:chevron-left-rounded" width="48" height="48" class="slider__chevron slider__chevron-left"></iconify-icon>
+            <iconify-icon icon="material-symbols:chevron-right-rounded" width="48" height="48" class="slider__chevron slider__chevron-right"></iconify-icon>
+            <div class="slider">
+                <div class="slider__item slider__item1">
+                    <div class="slider__item1_photo-container">
+                        <img src="./img/ronald-richards.png" alt="Ronald Richards" class="slider__item1_photo">
+                        <div class="slider__item1_photo-caption">
+                            <p class="slider__item1_photo-caption-name">Ronald Richards</p>
+                            <p class="slider__item1__photo-caption-profession">Product Manager</p>
+                        </div>
                     </div>
+                    <p class="slider__item1_text">Incididunt cillum do sint sint enim ullamco id deserunt mollit qui reprehenderit do. Velit ex tempor cillum ad sint occaecat. Do nulla velit labore occaecat do deserunt Lorem magna officia incididunt consectetur amet. Sunt consectetur veniam minim ex commodo sint non. Occaecat aute officia excepteur non laboris id qui ad.</p>
+                    <div class="slider__item1_background-logo">“</div>
                 </div>
-                <p class="testimonial__text">Incididunt cillum do sint sint enim ullamco id deserunt mollit qui reprehenderit do. Velit ex tempor cillum ad sint occaecat. Do nulla velit labore occaecat do deserunt Lorem magna officia incididunt consectetur amet. Sunt consectetur veniam minim ex commodo sint non. Occaecat aute officia excepteur non laboris id qui ad.</p>
+            </div>
+            
+            <div class="slider-indicators">
+                <div class="slider-indicators__items slider-indicators__items-active"></div>
+            </div>
+        </section>
+        <section class="join">
+            <h2 class="join__title">Become a contributor?</h2>
+            <p class="join__text">Join us and get tips & tricks to become a great Designer and Developer</p>
+            <div class="join__serch">
+                <input type="text" class="join__serch-input" placeholder="Enter your email...">
+                <div class="join__serch-button">Join Us</div>
             </div>
         </section>
     </main>
