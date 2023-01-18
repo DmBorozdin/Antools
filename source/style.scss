@@ -1,12 +1,26 @@
+$orange-color: #FF6E30;
+$text-color: rgba(255, 255, 255, 0.55);
+$title-color: rgba(255, 255, 255, 0.9);
+
 @mixin flexible () {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-$orange-color: #FF6E30;
-$text-color: rgba(255, 255, 255, 0.55);
-$title-color: rgba(255, 255, 255, 0.9);
+@mixin title () {
+    font-weight: 500;
+    font-size: 49px;
+    line-height: 62px;
+    color: $title-color;
+}
+
+@mixin info () {
+    font-weight: 500;
+    color: $text-color;
+    font-size: 18px;
+    line-height: 30px;
+}
 
 body {
     margin: 0;
@@ -14,6 +28,38 @@ body {
     font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: 500;
+}
+
+.brand {
+    margin: 0 108px 200px;
+    padding: 55px 82px;
+    border-radius: 25px;
+    background: rgba(44, 53, 61, 0.2);
+    backdrop-filter: blur(25px);
+    overflow: hidden;
+    &::after {
+        content: '';
+        width: 159px;
+        height: 159px;
+        background: rgba(255, 72, 66, 0.3);;
+        position: absolute;
+        top: -86px;
+        left: -84px;
+        filter: blur(50px);
+    }
+}
+
+.brand__list {
+    @include flexible();
+    flex-wrap: wrap;
+}
+
+.brand__text {
+    font-size: 24px;
+    line-height: 36px;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    margin: 0 0 55px;
 }
 
 .hero {
@@ -149,28 +195,146 @@ body {
     color: $text-color;
 }
 
+.newcomer {
+    margin: 0 108px 200px 108px;
+    @include flexible();
+    align-items: flex-start;
+}
+
+.newcomer__button {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    color: #FFF;
+    padding: 16px 40px;
+    background-color: $orange-color;
+    border-radius: 8px;
+    width: 198px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.newcomer__info {
+    width: 427px;
+}
+
+.newcomer__text {
+    @include info();
+    margin: 0 0 60px;
+}
+
+.newcomer__title {
+    @include title();
+    margin: 0 0 30px;
+}
+
 .popular {
-    width: 1224px;
-    height: 1109px;
-    margin: 0 auto 200px auto;
+    margin: 0 96px 200px 96px;
+}
+
+.popular__button {
+    color: $orange-color;
+    padding: 16px 36px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    width: 184px;
+    font-size: 20px;
+    line-height: 30px;
+    box-sizing: border-box;
+    margin: 100px auto 0;
+    cursor: pointer;
 }
 
 .popular__text {
     width: 427px;
-    margin: 0 auto 90px auto;
-    color: $text-color;
+    margin: 0 auto 110px auto;
     text-align: center;
-    font-size: 18px;
-    line-height: 30px;
+    @include info();
 }
 
 .popular__title {
-    font-weight: 500;
-    font-size: 49px;
-    line-height: 62px;
+    @include title();
     text-align: center;
-    color: $title-color;
     margin: 0 0 25px;
+}
+
+.testimonial {
+    height: 492px;
+    margin: 0 108px 250px;
+    text-align: center;
+    position: relative;
+}
+
+.testimonial__chevron {
+    color: rgba(255, 255, 255, 0.28);
+    position: absolute;
+    top: 222px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    &:hover {
+        transform: scale(1.5);
+    }
+}
+
+.testimonial__chevron-left {
+    left: 0;
+}
+
+.testimonial__chevron-right {
+    right: 0;
+}
+
+.testimonial__container {
+    height: 492px;
+    display: flex;
+    justify-content: center;
+}
+
+.testimonial__photo {
+    margin-right: 57px;
+}
+
+.testimonial__photo-caption {
+    position: absolute;
+    text-align: left;
+    padding: 13px 22px;
+    background: rgba(40, 48, 54, 0.2);
+    backdrop-filter: blur(25px);
+    border-radius: 8px;
+    left: 130px;
+    bottom: 29px;
+}
+
+.testimonial__photo-caption_name {
+    font-size: 26px;
+    line-height: 39px;
+    letter-spacing: 0.015em;
+    color: rgba(255, 253, 253, 0.78);
+    margin: 0 0 2px;
+}
+
+.testimonial__photo-caption_profession {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(255, 253, 253, 0.55);
+    margin: 0;
+}
+
+.testimonial__photo-container {
+    position: relative;
+}
+
+.testimonial__text {
+    font-family: 'Roboto', sans-serif;;
+    width: 393px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 30px;
+    letter-spacing: 0.015em;
+    color: rgba(255, 255, 255, 0.78);
+    text-align: left;
+    margin: 128px 0 0;
 }
 
 .tools {
@@ -211,7 +375,7 @@ body {
             content: '';
             width: 65px;
             height: 65px;
-            background: rgba(255, 110, 48, 0.6);
+            background: rgba(255, 110, 48, 0.2);
             position: absolute;
             top: -6px;
             right: 16px;
@@ -296,4 +460,29 @@ body {
     line-height: 27px;
     margin: 0;
     color: rgba(255, 165, 55, 0.55);
+}
+
+
+.newcomer {
+    .tools {
+        max-width: 650px;
+        margin: -25px -12px;
+    }
+    .tools__item {
+        max-width: 288px;
+        margin: 25px 12px;
+        padding: 28px 22px;
+        &:hover {
+            &::after {
+                height: 63px;
+                position: absolute;
+                top: -17px;
+                right: -9px;
+                filter: blur(25px);
+            }
+        }
+    }
+    .tools__item_description {
+        font-size: 14px;
+    }
 }
