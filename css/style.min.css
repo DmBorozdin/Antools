@@ -8,6 +8,11 @@ body {
 
 .brand {
   margin: 0 108px 200px;
+}
+
+.brand_container {
+  max-width: 1225px;
+  margin: 0 auto;
   padding: 55px 82px;
   border-radius: 25px;
   background: rgba(44, 53, 61, 0.2);
@@ -15,7 +20,7 @@ body {
           backdrop-filter: blur(25px);
   overflow: hidden;
 }
-.brand::after {
+.brand_container::after {
   content: "";
   width: 159px;
   height: 159px;
@@ -39,6 +44,72 @@ body {
   color: rgba(255, 255, 255, 0.8);
   text-align: center;
   margin: 0 0 55px;
+}
+
+.footer {
+  height: 352px;
+  box-sizing: border-box;
+  border-top: 0.5px solid rgba(255, 255, 255, 0.15);
+  padding: 70px 233px 0 108px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-items: flex-start;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.footer__container p {
+  margin: 0 0 10px;
+}
+.footer__container a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.footer__title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 20px;
+}
+
+.footer__copyright {
+  width: 260px;
+  margin-right: 41px;
+}
+
+.footer__copyright_company {
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 21px;
+}
+
+.footer__copyright_info {
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 25px;
+}
+
+.footer__copyright_logo {
+  margin-bottom: 25px;
+  height: 38px;
+}
+
+.footer__copyright_logo-img {
+  margin-right: 12px;
+}
+
+.footer__copyright_logo-text {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 38px;
+  color: rgba(255, 255, 255, 0.9);
+  display: inline-block;
+  vertical-align: top;
 }
 
 .hero {
@@ -159,7 +230,7 @@ body {
 }
 
 .join {
-  width: 553px;
+  width: 554px;
   margin: 0 auto 240px;
 }
 
@@ -257,7 +328,12 @@ body {
 }
 
 .newcomer {
-  margin: 0 108px 200px 108px;
+  margin: 0 108px 200px;
+}
+
+.newcomer__container {
+  max-width: 1225px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -298,7 +374,12 @@ body {
 }
 
 .popular {
-  margin: 0 96px 200px 96px;
+  margin: 0 96px 200px;
+}
+
+.popular__container {
+  max-width: 1225px;
+  margin: 0 auto;
 }
 
 .popular__button {
@@ -468,6 +549,11 @@ body {
 
 .testimonial {
   margin: 0 108px 250px;
+}
+
+.testimonial__container {
+  max-width: 1225px;
+  margin: 0 auto 250px;
   text-align: center;
   position: relative;
 }
