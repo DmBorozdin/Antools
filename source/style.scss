@@ -328,14 +328,32 @@ body {
     font-size: 16px;
     line-height: 24px;
     color: $text-color;
+    position: relative;
+    &::after{
+        content: '';
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        background-color: $orange-color;
+        left: 0;
+        top: 100%;
+        opacity: 0;
+        transform: translateY(12px);
+        transition: all 0.3s ease;
+        border-radius: 0 0 2px 2px;
+    }
     &:hover{
         cursor: pointer;
+        &::after{
+            opacity: 1;
+            transform: translateY(4px);
+        }
     }
 }
 
-.menu__item_link {
-    text-decoration: none;
+.menu__item_chevron-icon {
     color: $text-color;
+    vertical-align: middle;
 }
 
 .newcomer {
@@ -417,31 +435,21 @@ body {
 }
 
 .slider {
-    margin-bottom: 100px;
-}
-
-.slider__item1_background-logo {
-    position: absolute;
-    font-family: 'Lora';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 250px;
-    line-height: 320px;
-    width: 103px;
-    height: 320px;
-    background: linear-gradient(188.88deg, rgba(252, 252, 252, 0) 20.34%, rgba(255, 255, 255, 0.5) 155.72%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transform: rotate(19.17deg);
+    max-width: 849px;
+    margin: 0 auto 100px;
+    overflow: hidden;
 }
 
 .slider__chevron {
+    z-index: 1;
     color: rgba(255, 255, 255, 0.28);
     position: absolute;
     top: 222px;
-    cursor: pointer;
     transition: transform 0.5s ease;
+}
+
+.slider__chevron_active {
+    cursor: pointer;
     &:hover {
         transform: scale(1.5);
         color: $orange-color;
@@ -460,19 +468,7 @@ body {
     width: 168px;
     margin: 0 auto;
     position: relative;
-    &::after, &::before {
-        content: '';
-        width: 44px;
-        height: 6px;
-        background-color: #283036;
-        position: absolute;
-        right: 0;
-        top: 0;
-        border-radius: 4px;
-    }
-    &::before {
-        left: 0;
-    }
+    @include flexible();
 }
 
 .slider-indicators__items {
@@ -488,10 +484,27 @@ body {
     height: 8px;
 }
 
-.slider__item1 {
+.slider__item {
     height: 492px;
     display: flex;
     justify-content: center;
+    position: relative;
+}
+
+.slider__item1_background-logo {
+    position: absolute;
+    font-family: 'Lora';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 250px;
+    line-height: 320px;
+    width: 103px;
+    height: 320px;
+    background: linear-gradient(188.88deg, rgba(252, 252, 252, 0) 20.34%, rgba(255, 255, 255, 0.5) 155.72%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: rotate(19.17deg);
 }
 
 .slider__item1_photo {
@@ -533,7 +546,7 @@ body {
 
 .slider__item1_text {
     font-family: 'Roboto', sans-serif;;
-    width: 393px;
+    max-width: 393px;
     font-weight: 400;
     font-size: 14px;
     line-height: 30px;
@@ -541,6 +554,11 @@ body {
     color: rgba(255, 255, 255, 0.78);
     text-align: left;
     margin: 128px 0 0;
+}
+
+.slider__line {
+    display: flex;
+    transition: all 0.6s ease;
 }
 
 .testimonial {
